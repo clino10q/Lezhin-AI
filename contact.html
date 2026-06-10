@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="jsdelivr.net">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <style>
+  .popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #f1060d;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .popup.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <nav id="navig">
+      <div class="logo">
+        <img src="images/logo2.png" alt="Logo">
+        <p>Lezhin AI</p>
+      </div>
+      
+      <div class="hamburger-case transparent">
+        <div class="hamburger-icon">
+          <a href="signup.html?redirect=run.html" id="red">Get Started</a>
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+          <a href="index.html">Home</a>
+          <a href="index.html#how-it-works">How it Works</a>
+          <a href="index.html#features">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Blog</a>
+          <a href="index.html#faqs">Faqs</a>
+          <a href="#navig">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section class="contact-section transparent">
+    <h1 class="transparent animate-on-scroll">Contact <span>Us</span></h1>
+    <p class="transparent animate-on-scroll">Have questions or need help? Fill out the form below, and we'll get back to you promptly. We're here to assist you!</p>
+
+    <div class="contact-container grey">
+      <form id="contactForm" class="transparent">
+
+        <div class="field transparent">
+          <label class="transparent">Name</label>
+          <input type="text" placeholder="John Doe">
+        </div>
+
+        <div class="field transparent">
+          <label class="transparent">Email</label>
+          <input type="email" placeholder="john@email.com">
+        </div>
+
+        <div class="field transparent">
+          <label class="transparent">Message</label>
+          <textarea placeholder="Message"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+
+      </form>
+    </div>
+    <div id="successPopup" class="popup">
+      Thanks for contacting us!
+    </div>
+  </section>
+  <!-- Popup -->
+  
+  <section class="faqs-section" style="padding-top: 80px; display: flex; justify-content: center;">
+    <div class="faqs grey animate-on-scroll" style="width: 90vw; border-radius: 15px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 20px;">
+      <div class="faqs-text transparent animate-on-scroll" style="width: 100%;">
+        <h1 class="transparent" style="font-size: 60px;">Frequently Asked<br><span class="color-red transparent">Questions</span></h1>
+        <p class="transparent" style="width: 80%;">Have questions about our AI-Powered Design Assistant? Find answers to the most common questions and learn how our platform can enhance your creative process.</p>
+      </div>
+      <div class="faq transparent animate-on-scroll">
+        <div class="faq-item transparent ">
+          <div class="faq-question transparent">
+            <h3 class="transparent">How does the AI generate designs?</h3>
+            <span class="faq-icon transparent"><i class="fa-solid fa-angle-down transparent"></i></span>
+          </div>
+          <div class="faq-answer transparent">
+            <p class="transparent">Our AI analyzes your design brief and uses advanced algorithms to generate multiple design concepts tailored to your specifications. It takes into account your preferences, style, and project requirements to deliver unique and high-quality designs.</p>
+          </div>
+        </div>
+
+        <div class="faq-item transparent">
+          <div class="faq-question transparent">
+            <h3 class="transparent">Can I customize the AI-generated designs?</h3>
+            <span class="faq-icon transparent"><i class="fa-solid fa-angle-down transparent"></i></span>
+          </div>
+          <div class="faq-answer transparent">
+            <p class="transparent">Our AI analyzes your design brief and uses advanced algorithms to generate multiple design concepts tailored to your specifications. </p>
+          </div>
+        </div>
+
+        <div class="faq-item transparent">
+          <div class="faq-question transparent">
+            <h3 class="transparent">What support options are available?</h3>
+            <span class="faq-icon transparent"><i class="fa-solid fa-angle-down transparent"></i></span>
+          </div>
+          <div class="faq-answer transparent">
+            <p class="transparent">We offer comprehensive support for all our plans. Starter users have access to email support, Pro users benefit from priority email support, and Enterprise users receive 24/7 priority support along with a dedicated account manager.</p>
+          </div>
+        </div>
+
+        <div class="faq-item transparent">
+          <div class="faq-question transparent">
+            <h3 class="transparent">Is there a free trial available?</h3>
+            <span class="faq-icon transparent"><i class="fa-solid fa-angle-down transparent"></i></span>
+          </div>
+          <div class="faq-answer transparent">
+            <p class="transparent">Yes, we offer a 14-day free trial for all new users. You can explore all the features of our AI-powered design assistant and see how it can enhance your creative process before committing to a subscription.</p>
+          </div>
+        </div>
+
+        <div class="faq-item transparent">
+          <div class="faq-question transparent">
+            <h3 class="transparent">How secure is my data?</h3>
+            <span class="faq-icon transparent"><i class="fa-solid fa-angle-down transparent"></i></span>
+          </div>
+          <div class="faq-answer transparent">
+            <p class="transparent">We prioritize the security of your data. All your designs and project details are stored in secure cloud storage with advanced encryption. Enterprise users have access to enhanced security options for added peace of mind.</p>
+          </div>
+        </div>
+
+        <div class="faq-item transparent">
+          <div class="faq-question transparent">
+            <h3 class="transparent">What integrations are available?</h3>
+            <span class="faq-icon transparent"><i class="fa-solid fa-angle-down transparent"></i></span>
+          </div>
+          <div class="faq-answer transparent">
+            <p class="transparent">Our platform seamlessly integrates with popular design and project management tools such as Adobe Creative Suite, Figma, and Trello. This allows you to streamline your workflow and easily incorporate our AI-powered design assistant into your existing processes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="design-section">
+    <div class="design-statement grey ">
+      <div class="design-text transparent animate-on-scroll" style="width: 80%;" >
+        <h1 class="transparent" style="font-size: 60px;">
+          Start Your Design <br> 
+          <span class="color-red transparent">Journey</span> Today
+        </h1>
+        <p class="transparent">Sign up now and experience the power of AI-driven<br> 
+          design without any commitment.
+        </p>
+      </div>
+      <img src="images/LastRose2.png" alt="">
+    </div>
+  </section>
+  <section class="footer-section grey">
+    <div class="footer-divs transparent">
+      <div class="footer-div transparent">
+        <div class="logo transparent">
+          <img src="images/logo2.png" alt="Logo" class="transparent">
+        <p transparent>Lezhin AI</p>
+        </div>
+        <div class="quickLinks transparent">
+          <a href="index.html#how-it-works" class="quicklink transparent">How it Works</a>
+          <a href="index.html#features" class="quicklink transparent">Features</a>
+          <a href="pricing.html" class="quicklink transparent">Pricing</a>
+          <a href="blog.html" class="quicklink transparent">Blog</a>
+          <a href="index.html#faqs" class="quicklink transparent">Faqs</a>
+          <a href="#navig" class="quicklink transparent">Contact</a>
+        </div>
+      </div>
+      <div class="footer-div transparent" style="border-top: 0.5px solid grey; padding-top: 20px;">
+        <p class="transparent" style="color: grey; font-size: 16px; cursor: default;">Made by Uniform | Ayomide I. |Template from Framer</p>
+        <div class="privacy transparent">
+          <a href="" class="transparent">Privacy Policy</a>
+          <a href="" class="transparent">Terms and Conditions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+<script src="./scripting.js"></script>
+<script>
+  const form = document.getElementById("contactForm");
+  const popup = document.getElementById("successPopup");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Show popup
+    popup.classList.add("show");
+
+    // Clear form
+    form.reset();
+
+    // Hide popup after 2 seconds
+    setTimeout(() => {
+      popup.classList.remove("show");
+    }, 2000);
+  });
+</script>
+</html>

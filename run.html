@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styling.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="jsdelivr.net">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+<style>
+  #backToDash, #backToDash i{
+    display: none;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-align: center;
+    margin: -17px 0px;
+    font-size: 14px;
+  }
+
+  #backToDash:hover, #backToDash:hover i{
+    color: red;
+    text-decoration: underline red;
+    font-size: 16px;
+  }
+</style>
+<body>
+  <header style="display: none;">
+    <nav>
+      <div class="logo">
+        <img src="images/logo2.png" alt="Logo">
+        <p>Lezhin AI</p>
+      </div>
+      
+      <div class="hamburger-case transparent">
+        <div class="hamburger-icon">
+          <a href="./run.html" id="red">Get Lezhin+</a>
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+          <a href="index.html">Home</a>
+          <a href="index.html#how-it-works">How it Works</a>
+          <a href="index.html#features">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Blog</a>
+          <a href="index.html#faqs">Faqs</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section class="plans-section" id="pricing" style="padding-top: 50px;">
+    <div class="plans animate-on-scroll">
+      <div class="imagine-text" style=" display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <h1 style="font-size: 60px;">Affordable Plans for <br><span class="color-red">Every Need</span></h1>
+        <p style="width: 60%;" id="pricingP">
+          Choose the perfect plan for your design projects, from startups to enterprises.<br>Our pricing tiers are designed to offer flexibility and value, ensuring you get the most out of our AI-powered design assistant.</p>
+      </div>
+      <div class="toggle-wrap">
+        <span class="toggle-label" id="label-monthly">Monthly</span>
+        <label class="switch">
+          <input type="checkbox" id="billing-toggle">
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label" id="label-yearly">Yearly</span>
+      </div>
+      <div class="plans-div animate-on-scroll">
+        <div class="plan grey animate-on-scroll" id="clicks">
+          <div class="plan-header transparent">
+            <h6 class="transparent planning-name">FREE</h6>
+            <h2 class="transparent">$0/m</h2>
+            <h6 class="transparent">Free forever</h6>
+          </div>
+          <div class="plan-text transparent two-plans" id="down-get-started">
+            <ul style="list-style-type: none;" class="transparent">
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Basic AI-generated designs</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Access to customization tools</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Standard templates library</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>5 projects per month</li>
+            </ul>
+          </div>
+        </div>
+        <div class="plan grey plan-red animate-on-scroll">
+          <div class="plan-header transparent">
+            <h6 class="transparent planning-name">BASIC</h6>
+            <h2 class="transparent planning-cost" id="basic-price"><span class="transparent planning-span">$14.99</span><span class="transparent">/m</span></h2>
+            <h6 class="transparent" id="basic-billing">Billed Monthly</h6>
+          </div>
+          <div class="plan-text transparent two-plans">
+            <ul style="list-style-type: none;" class="transparent" >
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Advanced AI-generated designs</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Access to customization tools</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Premium templates library</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Unlimited Projects</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Real-time collaboration</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Priority email support</li>
+            </ul>
+          </div>
+        </div>
+        <div class="plan grey animate-on-scroll">
+          <div class="plan-header transparent">
+            <h6 class="transparent planning-name">PRO</h6>
+            <h2 class="transparent planning-cost" id="pro-price"><span class="transparent planning-span">$29.99</span><span class="transparent">/m</span></h2>
+            <h6 class="transparent" id="pro-billing">Billed Monthly</h6>
+          </div>
+          <div class="plan-text transparent" >
+            <ul style="list-style-type: none;" class="transparent">
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>All features included in Pro Plan</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Dedicated account manager</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Custom AI solutions and designs</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Onboarding and training sessions</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>24/7 priority support</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Advanced analytics and reporting</li>
+              <li class="transparent"><i class="fa-regular fa-circle-check"></i>Secure cloud storage</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="checkout-section">
+    <div class="checkout grey animate-on-scroll">
+      <div class="checkout-header transparent">
+        <h2 class="checkout-title transparent">Payment details</h2>
+        <div class="order-summary" id="orderSummary">Basic Plan — $14.99/m</div>
+      </div>
+
+      <div class="form-grid transparent">
+        <div class="form-group transparent">
+          <label for="firstName" class="transparent">First name</label>
+          <input type="text" id="firstName" placeholder="Ada" required>
+        </div>
+        <div class="form-group transparent">
+          <label for="lastName" class="transparent">Last name</label>
+          <input type="text" id="lastName" placeholder="Lovelace" required>
+        </div>
+        <div class="form-group full transparent">
+          <label for="email" class="transparent">Email address</label>
+          <input type="email" id="email" placeholder="ada@example.com" required>
+        </div>
+      </div>
+
+      <div class="card-icons transparent">
+        <span style="font-size:11px;color:var(--ink-faint);margin-right:4px;" class="transparent">Accepts:</span>
+        <span class="card-icon visa">VISA</span>
+        <span class="card-icon mc">MC</span>
+        <span class="card-icon amex">AMEX</span>
+      </div>
+
+      <div class="form-grid transparent">
+        <div class="form-group full transparent">
+          <label for="cardName" class="transparent">Name on card</label>
+          <input type="text" id="cardName" placeholder="Ada Lovelace" required>
+        </div>
+        <div class="form-group full transparent">
+          <label for="cardNumber" class="transparent">Card number</label>
+          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+        </div>
+      </div>
+
+      <div class="card-row transparent">
+        <div class="form-group transparent">
+          <label for="expiry" class="transparent">Expiry</label>
+          <input type="text" id="expiry" placeholder="MM / YY" maxlength="7" class="transparent" required>
+        </div>
+        <div class="form-group transparent">
+          <label for="cvc" class="transparent">CVV</label>
+          <input type="text" id="cvc" placeholder="123" maxlength="4" required>
+        </div>
+      </div>
+
+      <div class="total-row transparent">
+        <span class="total-label transparent" class="transparent">Total due today</span>
+        <span class="total-amount transparent" id="totalAmount">$14.99</span>
+      </div>
+
+      <button type="submit" class="cta-btn" onclick="handleSubmit()">Subscribe now →</button>
+      <a href="dashboard.html" id="backToDash"><i class="ti ti-arrow-narrow-left" id="backToDashArr"></i>Back to dashboard</a>
+
+      <p class="secure-note transparent">
+        <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M6 1L1 3.5V7c0 2.8 2.1 5.4 5 6 2.9-.6 5-3.2 5-6V3.5L6 1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        Secured with 256-bit SSL encryption · Cancel anytime
+      </p>
+    </div>
+  </section>
+</body>
+<script src="./script.js"></script>
+</html>

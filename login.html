@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: url(./images/rose7.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .grey {
+      position: relative;
+      overflow: hidden; /* keeps the grain inside the div */
+    }
+
+    .grey::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E");
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .grey > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 400px;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .logo{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 3rem;
+    }
+
+    .logo p{
+      font-weight: 700;
+      color: rgb(255, 255, 255);
+    }
+
+    .logo img{
+      margin-top: 10px;
+      height: 50px;
+      width: 50px;
+    }
+
+    .extras{
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      margin: -10px 0px 10px;
+    }
+
+    label{
+      display: flex;
+    }
+
+    #checkbox{
+      width: 20px;
+      padding: 0px;
+      margin-bottom: 0px;
+      box-shadow: unset;
+    }
+
+    .extras a{
+      color: white;
+      text-decoration: none;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 1rem;
+      color: black;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 0 5px rgb(52, 52, 52);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      cursor: pointer;
+      color: black;
+      border-radius: 10px;
+      border: none;
+    }
+
+    button:hover{
+      background-color: red;
+    }
+
+    #message{
+      color: rgb(255, 255, 255);
+      font-size: 12px;
+      margin-top: -8px;
+    }
+
+    #create{
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    #create a{
+      text-decoration: none;
+    }
+
+    #create a:hover, .extras a:hover{
+      color: rgb(255, 0, 0);
+      font-weight: bold;
+      text-decoration: underline red;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 92vw;
+        padding: 1.2rem;
+      }
+
+      .logo p { font-size: 13px; }
+      .logo img { height: 38px; width: 38px; }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container grey">
+    <div class="logo">
+      <p>Sign In to Lezhin AI</p>
+      <img src="./images/logo2.png" alt="">
+    </div>
+    <div class="input-div">
+      Username
+      <input
+        type="text"
+        id="username"
+      >
+      <p id="message"></p>
+
+      Password
+      <input
+        type="password"
+        id="password"
+      >
+    </div>
+    
+    <div class='extras'>
+      <label>
+        <input type="checkbox" id="checkbox"><span>Show Password</span>
+      </label>
+      <a href="forgotPassword.html" id="forgot">Forgot Password?</a>
+    </div>
+
+    <button id="loginBtn">
+      Login
+    </button>
+
+    
+    <p id="create">Don't have an account? <a id="signupLink" href="signup.html">Sign Up</a></p>
+  </div>
+
+  <!-- Overlay -->
+  <div id="popupOverlay" style="
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 99;
+  "></div>
+
+  <!-- Popup -->
+  <div id="popup" style="
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #111;
+    border: 1px solid #ff2a2a;
+    padding: 35px 40px;
+    border-radius: 14px;
+    text-align: center;
+    z-index: 100;
+    box-shadow: 0 10px 40px rgba(255,42,42,0.2);
+    width: 300px;
+  ">
+      <h2 style="color: #ff2a2a; font-size: 18px; margin-bottom: 8px;">Login Successful!</h2>
+      <h3>Redirecting...</h3>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

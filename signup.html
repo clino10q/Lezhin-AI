@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+  }
+
+  body{
+    background: url('./images/rose6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 20px;
+    height: 100vh;
+  }
+
+  .grey {
+    position: relative;
+    overflow: hidden; /* keeps the grain inside the div */
+  }
+
+  .grey::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .grey > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    width: 400px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  h2{
+    align-self: center;
+    color: rgb(255, 255, 255);
+  }
+
+  #passwordError, #usernameError, #emailError{
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+  }
+
+  .form-titles{
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+  }
+
+
+  .details, .password{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  input, select{
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 6px;
+    outline: none;
+    color: #ffffff;
+    background-color: rgb(248 241 255 / 23%);
+    box-shadow: 0 0 1px black;
+  }
+
+  input::placeholder{
+    color: #ffffff;
+  }
+
+  option{
+    color: #757575;
+  }
+
+  button {
+    margin-top: -10px;
+    width: 100%;
+    padding: 12px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: rgba(254, 254, 254, 0);
+  }
+
+  button:hover{
+    background-color: rgb(255, 0, 0);
+    color: white;
+  }
+  
+  #create{
+    margin-top: -5px;
+    font-size: 14px;
+  }
+
+  #create a{
+    text-decoration: none;
+    color: white;
+  }
+
+  #create a:hover, .extras a:hover{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    text-decoration: underline red;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-content {
+    width: 400px;
+    max-width: 90%;
+    background: #111;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .modal-content h3 {
+    text-align: center;
+    color: red;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .checkbox-group label {
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+
+  label a{
+    color: red;
+  }
+
+  .modal-buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .modal-buttons button {
+    flex: 1;
+  }
+
+  #confirmBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /*Responsiveness*/
+  @media(max-width: 480px){
+    body{
+      margin: 10px;
+    }
+
+    .form-container{
+      max-width: 400px;
+    }
+  }
+
+  
+
+</style>
+<body>
+  <form class="form-container grey" id="form-container">
+    <h2>Create A Lezhin Account</h2>
+    <div class="details">
+      <span class="form-titles">Email Address</span>
+        <input type="email" id="e-mailAddress" placeholder="Email Address" required>
+        <p id="emailError"></p>
+
+      <span class="form-titles">Phone Number</span>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+
+      <span class="form-titles xtra-spc">Age</span>
+      <input type="number" id="age" placeholder="Age" min="6" required>
+      <p id="ageError"></p>
+      
+
+      <span class="form-titles">Sex</span>
+      <select id="sex" required>
+        <option value="">Select Sex</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <span class="form-titles">Preferred Username</span>
+      <input type="text" id="username" placeholder="Username" required>
+      <p id="usernameError"></p>
+
+      <span class="form-titles">Password</span>
+      <input type="password" id="password" placeholder="Password" required>
+
+      <span class="form-titles">Confirm Password</span>
+      <input type="password" id="conPassword" placeholder="Password" required>
+
+      <p id="passwordError"></p>
+    </div>
+    <div class="password">
+      
+    </div>
+    <button type="submit">Sign Up</button>
+
+    <p id="create">Already have an account? <a id="loginLink" href="login.html">Log In</a></p>
+  </form>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+
+      <h3>Confirm Registration</h3>
+
+      <p>Please confirm the following before creating your account.</p>
+
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" id="check1">
+          I confirm that the information provided is correct.
+        </label>
+
+        <label>
+          <input type="checkbox" id="check2">
+          I agree to the <a href="./policies/privacy.html" target="_blank">Privacy Policy</a> & <a href="./policies/terms-conditions.html" target="_blank">Terms and Conditions.</a>
+        </label>
+
+      </div>
+
+      <div class="modal-buttons">
+        <button type="button" id="cancelBtn">Cancel</button>
+        <button type="button" id="confirmBtn" disabled>
+          Confirm & Continue
+        </button>
+      </div>
+
+    </div>
+  </div>
+</body>
+<script src="signingUp.js"></script>
+</html>
